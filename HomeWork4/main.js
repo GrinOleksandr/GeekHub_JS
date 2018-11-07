@@ -17,7 +17,7 @@ function countMyWater(array) {
     return totalWaterAmmount;
 }
 var testArray = [2,1,5,0,3,4,7,2,3,1,0];
-console.log("there is " , countMyWater(testArray), " units of water in mountains of " , testArray ," after the rain.");
+console.log(`there is ${countMyWater(testArray)} units of water in mountains of  ${testArray}  after the rain.`);
 
 
 
