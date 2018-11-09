@@ -7,7 +7,9 @@ function countMyWater(array) {
         var peaks = [];
         var temp;
         for (let x = start; x < array.length - 1; x++) {
-            if (array[x + 1] > array[x] & array[x + 2] == undefined || array[x + 1] > array[x] & array[x + 1] > array[x + 2] || array[x + 1] >= array[lakeStart]) {
+            if (array[x + 1] > array[x] & array[x + 2] == undefined
+                || array[x + 1] > array[x] & array[x + 1] > array[x + 2]
+                || array[x + 1] >= array[lakeStart]) {
                 temp = x + 1;
                 peaks.push(array[temp]);
             }
