@@ -1,0 +1,475 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800');
+
+/*----------------------------------------------------------------------------------*/
+/*------------------------------RESET DEFAULT STYLES--------------------------------*/
+/*----------------------------------------------------------------------------------*/
+html,body                       { width:100%; height:100%; }
+body                            { padding:0; margin:0; font:12px Tahoma, sans-serif; background:#fff; color:#000; }
+div,p,a,span,em,strong,img,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,td,tr,form,fieldset,label,select,checkbox,input,textarea {
+    padding:0;
+    margin:0;
+    outline:none;
+    list-style:none;
+}
+select, input, textarea        { font-size:12px; vertical-align:middle; }
+textarea                       { vertical-align:top; }
+:focus                         { outline:none; }
+input[type=submit]             { cursor:pointer; }
+img, fieldset                  { border:0; }
+table                          { border-collapse:collapse; border-spacing:0; }
+a:link, a:visited              { font:12px Tahoma, sans-serif; color:#000; text-decoration:underline; }
+a:hover                        { text-decoration:none; }
+
+
+
+
+
+
+
+
+
+/*
+/*----------------------------------------------------------------------------------*/
+/*-------------------------------------HEADER--------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+#header {
+    color: #fbce2f;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.82vw;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+#rectangle-orange {
+    width: 8.39vw;
+    height: 8.63vw;
+    background-color: #ffc600;
+    opacity: 0.8;
+    margin-left: 2.50vw;
+    float: right;
+}
+
+#header ul li p:not(#rectangle-orange) {
+    margin-top: 0.65vw;
+}
+
+#header ul {
+    float: right;
+    margin-top: 9.68vw;
+    margin-bottom: 7.50vw;
+}
+
+#header ul li {
+    float: right;
+}
+
+
+
+/*----------------------------------------------------------------------------------*/
+/*-------------------------------------SIDEBAR--------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+
+#sidebar {
+    float: left;
+    width: 35.65vw;
+    z-index: 1;
+    position: absolute;
+}
+
+#sidebar-body {
+    background-color: #ffcc1a;
+    margin-left: 22%;
+    height: 100%;
+    opacity: 0.9;
+    overflow: hidden;
+}
+
+.sidebar-head {
+    margin: 9.84vw 14% 0;
+}
+
+
+.sidebar-head h1 {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 8.06vw;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 6.05vw;
+}
+
+
+.sidebar-head h2 {
+    width: 20.16vw;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.26vw;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-top: 1.05vw;
+    margin-left: 0.24vw;
+    line-height: 1.94vw;
+}
+
+.sidebar-content {
+    margin-top: 30.16vw;
+    margin-left: 3.06vw;
+}
+
+.rectangle-white {
+    height: 1.77vw;
+    width: 6.21vw;
+    background-color: white;
+}
+
+.sidebar-content p {
+    margin-left: 0.4vw;
+}
+
+.sidebar-content :last-child {
+    margin-top: 3.95vw;
+    width: 17.74vw;
+    height: 10vw;
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.45vw;
+    font-weight: 400;
+}
+
+div.team {
+    margin-top: 14.92vw;
+    margin-left: 3.06vw;
+    margin-bottom: 5.89vw;
+}
+
+div.team :first-child {
+    margin-bottom: 3.95vw;
+}
+
+div.team p {
+    margin-left: 0.4vw;
+}
+
+p.team {
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.74vw;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.sidebar-footer {
+    background-color: #151f29;
+    overflow: hidden;
+    clear: both;
+}
+
+.sidebar-footer ul {
+    margin-left: 7.82vw;
+    margin-top: 9.44vw;
+    color: #FFFFFF;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.69vw;
+    font-weight: 400;
+    line-height: 75%;
+}
+
+.sidebar-footer li {
+    clear: both;
+}
+
+.sidebar-footer li p {
+    float: left;
+    margin-bottom: 4.03vw;
+}
+
+.sidebar-footer ul li :last-child {
+    margin-top: 0.81vw;
+}
+
+
+.adress, .phone, .email {
+    width: 3.63vw;
+    height: 3.63vw;
+    margin-right: 2.18vw;
+}
+
+.email {
+    background: url(img/mail.png) no-repeat left center;
+    background-origin: content-box;
+    background-size: contain;
+}
+
+.adress {
+    background: url(img/location.png) no-repeat left center;
+    background-origin: content-box;
+    background-size: contain;
+}
+
+.phone {
+    background: url(img/phone.png) no-repeat left center;
+    background-origin: content-box;
+    background-size: contain;
+}
+
+.www a {
+    text-decoration: none;
+    color: #dcaf0a;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.77vw;
+    font-weight: 700;
+    margin-left: 0;
+}
+
+ #email {
+     color: #FFFFFF;
+     font-family: Montserrat, sans-serif;
+     font-size: 1.69vw;
+     font-weight: 400;
+     text-decoration: none;
+ }
+
+/*----------------------------------------------------------------------------------*/
+/*-------------------------------------CONTENT--------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+
+#content {
+    width: 100%;
+}
+
+
+#header , #content1, #content2 {
+    width: 100%;
+}
+
+p.rectangle-grey {
+    width: 33.39vw;
+    height: 1.77vw;
+    background-color: #b6c2c0;
+    float: right;
+}
+
+#content1 {
+    background-color: #151e29;
+    float: right;
+    height: 42.10vw;
+}
+
+#content1 ul {
+    float: right;
+}
+
+
+
+#content1 ul li p, #content1 ul li h1 {
+    float: right;
+    display: block;
+}
+
+#content1 ul li:not(.rectangle-grey) {
+    margin-right: 8.31vw;
+}
+
+.corpo {
+    margin-top: 5.65vw;
+    color: #FFFFFF;
+    font-family: Montserrat, sans-serif;
+    line-height: 75%;
+    font-size: 3.95vw;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+#content1 h1 {
+    margin: 2.10vw auto;
+    color: #fbce2f;
+    line-height: 75%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 7.26vw;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.corpo2 {
+    color: #FFFFFF;
+    font-family: Montserrat, sans-serif;
+    line-height: 75%;
+    font-size: 3.95vw;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+
+#content1 .text {
+    margin-top: 4.11vw;
+    width: 48.79vw;
+    height: 6.45vw;
+    color: #FFFFFF;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.45vw;
+    font-weight: 400;
+    text-align: right;
+}
+
+/*----------------------------------------------------------------------------------*/
+/*-------------------------------------CONTENT2--------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+#content2 {
+    background-origin: content-box;
+    background-size: cover;
+    background-image: url("img/background-image.png"), url("img/background-image2.png");
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    float: right;
+    height: 100%;
+}
+
+#content2 ul {
+    float: right;
+    margin-right: 8.31vw;
+    margin-top: 6.94vw;
+}
+
+
+
+#content2 ul li h1 {
+    display: block;
+    clear: both;
+    color: #FFFFFF;
+    font-family: "Montserrat", sans-serif;
+    font-size: 7.26vw;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: right;
+    line-height: 75%;
+}
+
+#content2 .rectangle-white2 {
+    width: 1.77vw;
+    height: 5.81vw;
+    background-color: #ffffff;
+    float: right;
+    display: block;
+    margin-top: 5.24vw;
+    margin-bottom: 5.48vw;
+}
+
+p.white {
+    width: 45.24vw;
+    height: 6.77vw;
+    color: #ffffff;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.45vw;
+    font-weight: 700;
+    text-align: right;
+    float: right;
+    margin-top: 2.42vw;
+}
+
+p.black {
+    width: 45.24vw;
+    height: 6.77vw;
+    color: #000000;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.45vw;
+    font-weight: 700;
+    text-align: right;
+    float: right;
+    margin-top: 2.90vw;
+    margin-bottom: 10vw;
+}
+
+
+
+/*----------------------------------------------------------------------------------*/
+/*-------------------------------------FOOTER--------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+#footer {
+    background-image: linear-gradient(to left, #3B6C7D, #508499), url("img/background-image2.png");
+    background-origin: content-box;
+    background-size: cover;
+    background-blend-mode: overlay;
+    width: 100%;
+    float: right;
+}
+
+#footer ul li {
+    float: left;
+    margin-right: 4.92vw;
+}
+
+#footer ul {
+    display: flex;
+    align-items: center;
+    margin: 4vw 18.71vw 4vw 43.06vw;
+}
+
+
+
+.logo1 p {
+    background: url(img/logo1.png) no-repeat center center;
+    background-origin: content-box;
+    background-size: contain;
+    width: 12.66vw;
+    height: 4.84vw;
+}
+
+.logo2 p {
+    background: url(img/logo2.png) no-repeat center center;
+    background-origin: content-box;
+    background-size: contain;
+    width: 6.94vw;
+    height: 4.84vw;
+}
+
+.logo3 p {
+    background: url(img/logo3.png) no-repeat center center;
+    background-origin: content-box;
+    background-size: contain;
+    width: 6.94vw;
+    height: 4.84vw;
+}
+
+.logo4 p {
+    background: url(img/logo4.png) no-repeat center center;
+    background-origin: content-box;
+    background-size: contain;
+    width: 6.94vw;
+    height: 4.84vw;
+}
+
+/*----------------------------------------------------------------------------------*/
+/*-------------------------------------MOBILE--------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+@media only screen and (max-width: 400px) {
+
+    #body {
+        position: relative;
+    }
+
+    #wrapper {
+        position: relative;
+
+    }
+
+    #header ul {
+        margin: 2vw 0;
+    }
+
+    #content {
+        width: 80vw;
+        position: relative;
+        transform: scale(1.5);
+        height: 100%;
+    }
+
+    #sidebar {
+        display: none;
+    }
+
+    #footer ul {
+        margin: 2vw 0 2vw 22.5vw;
+    }
+}
