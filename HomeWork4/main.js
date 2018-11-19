@@ -1,38 +1,43 @@
 function countMyWater(array) {
+
     var totalWaterAmmount = 0;
     var lakeStart = 0;
     var lakeEnd = 0;
 
+//find endPoint of the LAKE
     function findLakeEnd(start, array) {
-        var peaks = [];
-        var temp;
-        for (let x = start; x < array.length - 1; x++) {
-            if (array[x + 1] > array[x] & array[x + 2] == undefined
-                || array[x + 1] > array[x] & array[x + 1] > array[x + 2]
-                || array[x + 1] >= array[lakeStart]) {
-                temp = x + 1;
-                peaks.push(array[temp]);
+        if (lakeStart == array.length - 1) {
+            return 0;
+        }
+
+        let end;
+
+        for (let j = array.length - 1; j > start; j--) {
+            if (array[j] >= array[start]) {
+                end = j;
             }
         }
-        var peakMatch = peaks.find(function (element, index, myArray) {
-            return element >= lakeStart;
-        })
 
-        if (peakMatch != undefined) {
-            return array.indexOf(peakMatch, start);
+        if (!end) {
+            let temp = [];
+            for (let k = start + 1; k < array.length; k++) {
+                temp.push(array[k]);
+            }
+            end = array.indexOf(Math.max(...temp), start + 1);
+            return end;
         }
-        else {
-            return array.indexOf(Math.max(...peaks), start);
-        }
+
+        return end;
     }
 
+//counting water in the LAKE
     array.forEach(function (item, i, arr) {
         lakeEnd = findLakeEnd(lakeStart, arr);
         if (i == lakeEnd) {
             lakeStart = lakeEnd;
         }
 
-        if (lakeStart < i < lakeEnd) {
+        if (lakeStart < i && i < lakeEnd) {
             totalWaterAmmount += Math.min(arr[lakeStart], arr[lakeEnd]) - arr[i];
         }
 
@@ -40,6 +45,12 @@ function countMyWater(array) {
     return totalWaterAmmount;
 }
 
+//testing
 var testArray = [2,1,5,0,3,4,7,2,3,1,0];
 console.log(`there is ${countMyWater(testArray)} units of water in mountains of  ${testArray}  after the rain.`);
 
+testArray = [0,10,10,0,5,7,2,0];
+console.log(`there is ${countMyWater(testArray)} units of water in mountains of  ${testArray}  after the rain.`);
+
+var testArray = [2,1,5,0,3,4,7,2,3,1,0,5];
+console.log(`there is ${countMyWater(testArray)} units of water in mountains of  ${testArray}  after the rain.`);
