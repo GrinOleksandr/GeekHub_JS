@@ -1,0 +1,139 @@
+/* -------------------- HEADER ----------------------- */
+#header li {
+    float: left;
+    list-style: none;
+    margin: 20px 100px;
+}
+
+#header ul {
+    margin: 20px;
+    border: 1px solid grey;
+    overflow: hidden;
+    background-color: #cfb3ff;
+}
+
+#legend {
+    border: 3px solid blue;
+    padding: 10px;
+    background: yellow;
+    color: darkblue;
+    font-weight: 800;
+}
+.creature-div {
+    width: 450px;
+    height: 550px;
+    margin: 10px;
+    position: relative;
+    border: 2px solid black;
+    background-image: url(img/narisovannyy_kotenok_1_04205752.jpg);
+    background-origin: content-box;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-color: #ffff0042;
+    background-blend-mode: darken;
+    float: left;
+}
+
+/* -------------------- Creature ----------------------- */
+
+#actions {
+    background-color: #4c9b6ce0;
+    padding: 5px;
+}
+
+#actions button {
+    margin: 1px;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+#stats {
+    width: 100px;
+    background: yellow;
+    padding-left: 10px;
+    display: inline-block;
+    color: blue;
+    font-weight: 500;
+    vertical-align: top;
+}
+
+#stats p {
+    margin: 0;
+}
+
+#myName {
+    width: 270px;
+    margin-top: 5px;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 100px;
+    vertical-align: middle;
+    font-size: 30px;
+    font-weight: 800;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.daysCount {
+    width: 50px;
+    margin-right: 10px;
+    padding: 10px 2px;
+    vertical-align: center;
+    background-color: #44ff0d;
+    display: inline-block;
+    float: right;
+    border: 2px solid black;
+    border-radius: 100%;
+}
+
+.dead-msg {
+    height: 180px;
+    width: 250px;
+    position: absolute;
+    top: 147px;
+    left: 90px;
+    padding: 100px 10px;
+    background-color: #d54950ed;
+    color: #0a0a0b;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.fat-msg {
+    height: 180px;
+    width: 250px;
+    position: absolute;
+    top: 125px;
+    left: 90px;
+    padding: 100px 10px;
+    background-color: #d54950ed;
+    color: #0a0a0b;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.warning-msg {
+    width: 200px;
+    height: 150px;
+    padding-top: 70px;
+    display: none;
+    background: #9ccf00e3;
+    position: absolute;
+    top: 150px;
+    left: 120px;
+    text-align: center;
+    vertical-align: bottom;
+    font-size: 30px;
+    font-weight: 800;
+    color: red;
+}
+
+.emotion-block {
+    position: absolute;
+    top: 110px;
+    left: 0;
+    width: 100px;
+}
