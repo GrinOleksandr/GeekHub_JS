@@ -15,6 +15,12 @@ addButton.addEventListener("click", addNewTask);
 let reverseButton = document.getElementById("reverseButton");
 reverseButton.addEventListener("click", reverseMe);
 
+let clearButton = document.getElementById("clear");
+clearButton.addEventListener("click", () => {
+    tasksList.innerHTML = "";
+    localStorage.clear();
+})
+
 function renderTaskList() {                                             //rebuild task list from LocalStorage
     let oldTasks = [];
     let tasksCounter = getLocalStorageObjectItem("indexCount") || 0;
@@ -97,7 +103,7 @@ function reverseMe() {                                                          
     let reversedTasksList = oldTasks.reverse();
     localStorage.clear();
     for (let k = 0; k < reversedTasksList.length; k++) {
-        addToList(reversedTasksList[k].task, reversedTasksList[k].time);
+        addToList(reversedTasksList[k].task, reversedTasksList[k].time, oldTasks[k].isDone);
     }
 }
 
