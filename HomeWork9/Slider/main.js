@@ -19,7 +19,7 @@ setInterval(function() {
     setTimeout(changeSlides, 20000, image2, image1);
     setTimeout(changeSlides, 25000, image5, image1);
     setTimeout(changeSlides, 30000, image5, image4);
-}, 5000);
+}, 200);
 
 // -------------------Block of buttons for tests----------------
 //-----------------Comment setInterval block^ before use--------
