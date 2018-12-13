@@ -1,10 +1,5 @@
 img {
-    width: 100px;
-    height: 70px;
+    display:none;
+
 }
 
-#btn-div{
-    position:fixed;
-    left: 500px;
-    top: 10px;
-}

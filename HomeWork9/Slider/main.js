@@ -6,7 +6,7 @@ let image2 = document.getElementById("image2");
 let image3 = document.getElementById("image3");
 let image4 = document.getElementById("image4");
 let image5 = document.getElementById("image5");
-let image6 = document.getElementById("image6");
+
 const newCvs = document.createElement("canvas");
 const btn1 = document.getElementById("btn1");
 const btn2 = document.getElementById("btn2");
@@ -14,11 +14,14 @@ const btn3 = document.getElementById("btn3");
 const btn4 = document.getElementById("btn4");
 const btn5 = document.getElementById("btn5");
 const btn6 = document.getElementById("btn6");
-const btn7 = document.getElementById("btn7");
+
 // const content = document.getElementById("content");
 // content.insertBefore(newCvs, cvs);
 
 const newCtx = newCvs.getContext("2d");
+
+
+
 
 
 let drawMe = function (t){
@@ -26,95 +29,58 @@ let drawMe = function (t){
     window.requestAnimationFrame(drawMe);
 };
 
-btn1.addEventListener("click", function(event){
-    drawMe = function (t){
-        render(t, image5, image4);
-        window.requestAnimationFrame(drawMe);
-    };
-    if(state.pos === 2) {
-        TweenMax.to(state, 1, {pos: 0});
-    }
-    else {
-        // image  = document.getElementById("image2");
-        TweenMax.to(state, 1, {pos: 2});
-    }
+function changeSlides(slide1,slide2){
+    setTimeout(function() {
+        drawMe = function (t) {
+            render(t, slide1, slide2);
+            window.requestAnimationFrame(drawMe);
+        };
+        if (state.pos === 2) {
+            TweenMax.to(state, 1, {pos: 0});
+        }
+        else {
+            TweenMax.to(state, 1, {pos: 2});
+        }
+    }, 2000);
+}
 
-});
+function step1 (){
+    changeSlides(image5,image4);
 
-btn2.addEventListener("click", function(event){
-    drawMe = function (t){
-        render(t, image5, image3);
-        window.requestAnimationFrame(drawMe);
-    };
-    if(state.pos === 2) {
-        TweenMax.to(state, 1, {pos: 0});
-    }
-    else {
-        // image  = document.getElementById("image2");
-        TweenMax.to(state, 1, {pos: 2});
-    }
+}
 
-});
+function step2 (){
+    changeSlides(image5,image3);
 
-btn3.addEventListener("click", function(event){
-    drawMe = function (t){
-        render(t, image2, image3);
-        window.requestAnimationFrame(drawMe);
-    };
-    if(state.pos === 2) {
-        TweenMax.to(state, 1, {pos: 0});
-    }
-    else {
-        // image  = document.getElementById("image2");
-        TweenMax.to(state, 1, {pos: 2});
-    }
+}
 
-});
+function step3 (){
+    changeSlides(image2,image3);
 
-btn4.addEventListener("click", function(event){
-    drawMe = function (t){
-        render(t, image2, image1);
-        window.requestAnimationFrame(drawMe);
-    };
-    if(state.pos === 2) {
-        TweenMax.to(state, 1, {pos: 0});
-    }
-    else {
-        // image  = document.getElementById("image2");
-        TweenMax.to(state, 1, {pos: 2});
-    }
+}
+function step4 (){
+    changeSlides(image2,image1);
 
-});
+}
+function step5 (){
+    changeSlides(image5,image1);
 
-btn5.addEventListener("click", function(event){
-    drawMe = function (t){
-        render(t, image5, image1);
-        window.requestAnimationFrame(drawMe);
-    };
-    if(state.pos === 2) {
-        TweenMax.to(state, 1, {pos: 0});
-    }
-    else {
-        // image  = document.getElementById("image2");
-        TweenMax.to(state, 1, {pos: 2});
-    }
+}
 
-});
+function step6 (){
+    changeSlides(image5,image4);
 
-btn6.addEventListener("click", function(event){
-    drawMe = function (t){
-        render(t, image5, image4);
-        window.requestAnimationFrame(drawMe);
-    };
-    if(state.pos === 2) {
-        TweenMax.to(state, 1, {pos: 0});
-    }
-    else {
-        // image  = document.getElementById("image2");
-        TweenMax.to(state, 1, {pos: 2});
-    }
+}
 
-});
+step1();
+step2();
+step3();
+step4();
+step5();
+step6();
+
+
+
 
 
 
