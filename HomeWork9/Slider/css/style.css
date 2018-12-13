@@ -1,5 +1,10 @@
 img {
     display:none;
+}
 
+#buttons {
+    position: fixed;
+    top: 20px;
+    left: 900px;
 }
 
