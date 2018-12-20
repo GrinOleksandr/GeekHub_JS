@@ -1,0 +1,27 @@
+p {
+    font-size: 32px;
+    font-weight:800;
+    margin:10px;
+}
+#my_form{
+    width:300px;
+    height: 30px;
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+    margin:10px;
+    border:2px solid grey;
+    border-radius:10px;
+    background-color: #d7d78c;
+}
+
+#form_text {
+    width:200px;
+    margin:5px;
+    border-radius: 3px;
+}
+
+#form_btn {
+    width: 50px;
+    height: 25px;
+}

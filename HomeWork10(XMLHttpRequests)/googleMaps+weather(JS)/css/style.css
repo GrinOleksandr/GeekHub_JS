@@ -1,0 +1,42 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    position: relative;
+}
+.input-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: white;
+    text-align: center;
+    z-index: 5;
+    border-bottom: 1px solid #ccc;
+}
+input {
+    -webkit-appearance: none;
+    border-radius: 30px;
+    padding: 7px 12px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+#weather-div {
+    visibility: hidden;
+    opacity:0;
+    padding:10px;
+    border:2px solid grey;
+    border-radius:5px;
+    position:fixed;
+    top: 51px;
+    left: 869px;
+    background:yellow;
+    transition: 3s;
+}
+
+
+
+
+

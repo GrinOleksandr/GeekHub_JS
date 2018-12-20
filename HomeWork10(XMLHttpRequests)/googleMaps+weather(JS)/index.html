@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<form class="input-form" id="form_address">
+    <input type="text" class="input-text" id="text_address" placeholder="Enter address">
+    <input type="submit" class="input-btn" id="btn_address" value="Знайти">
+</form>
+
+<div id="map" style="min-height: 100vh;"></div>
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<div id="weather-div"></div>
+<script src = main.js></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAX9V8Y70UEAV3u5JeG5ec02Jwx9m7Jqg4&callback=initMap"
+        async defer></script>
+
+</body>
+
+</html>
+
+<!-- apikey AIzaSyAX9V8Y70UEAV3u5JeG5ec02Jwx9m7Jqg4 --?>
