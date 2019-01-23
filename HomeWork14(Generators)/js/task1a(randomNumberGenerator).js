@@ -1,4 +1,3 @@
-console.log("generating 99 random numbers and arrange them into array for usability");
 //CREATING TEST OBJECT
 let testObject = {
     [Symbol.iterator]: () => {
@@ -32,5 +31,8 @@ let arr = [];
 for (let number of testObject){
     arr.push(number);
 }
+
+console.log("");
+console.log("**** TESTING:generating 99 random numbers and arranging them into array for usability:");
 console.log(arr);
 

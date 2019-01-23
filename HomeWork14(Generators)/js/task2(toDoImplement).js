@@ -1,4 +1,5 @@
-console.log("toDoImplement DEMO");
+console.log("");
+console.log("**** TESTING:toDoImplement. Results:");
 
 //by Denys Pysmennyi
 
