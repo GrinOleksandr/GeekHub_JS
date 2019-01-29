@@ -1,7 +1,7 @@
 const TestObject = {
     prop1: "Value1(Level = ROOT)",
-    prop2: "Value2(Level = ROOT)",
-    prop3: "Value3(Level = ROOT)",
+    prop2: true,
+    prop3: 123,
     prop4WithInnerLevel: {
         innerPROP1: "Value1(Level = 1)",
         innerPROP2: "Value2(Level = 1)",
@@ -20,11 +20,12 @@ const TestObject = {
         let resultsArray = [];
         for (let i = 0; i < rootKeys.length; i++) {
             let currentItem = this[rootKeys[i]];
-            if (typeof currentItem === "string") {
-                resultsArray.push(currentItem);
-            }
+
             if (typeof currentItem === "object") {
                 resultsArray = resultsArray.concat(iterateMe(currentItem));
+            }
+           else {
+                resultsArray.push(currentItem);
             }
         }
         return {
@@ -49,14 +50,17 @@ function iterateMe(target) {
     let results = [];
     for (let i = 0; i < targetKeys.length; i++) {
         let currentValue = target[targetKeys[i]];
-        if ((currentValue) && (typeof currentValue) === "string") {
-            results.push(currentValue);
-        }
         if ((currentValue) && (typeof currentValue) === "object") {
             results = results.concat(iterateMe(currentValue));
         }
+
+        else {
+            results.push(currentValue);
+        }
+
     }
     return results
+
 };
 
 
