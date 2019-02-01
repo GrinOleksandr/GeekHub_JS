@@ -1,0 +1,60 @@
+const Food = require('./model');
+const express = require('express')();
+
+// server Setup
+const http = require('http'),
+    url = require('url'),
+    port = 8000,
+    ip = '127.0.0.1';
+
+
+let server = http.createServer((request, response) => {
+    let parsedUrl = url.parse(request.url, true);
+
+    response.writeHead(200, {'Content-Type': 'text/plain', 'Access-Control-Allow-Origin': "*"});
+    let responseString;
+    let targetId = parsedUrl.query.id;
+    let targetName = parsedUrl.query.name;
+    let targetCalories = parsedUrl.query.calories;
+
+    if (parsedUrl.pathname === "/add") {
+        Food.create({id: 555, product: {name: "ffffff", calories: 444}}, function (err) {
+            if (err) return console.log(err);
+        });
+        console.log("ok")
+    }
+    if (parsedUrl.pathname === "/get") {
+
+
+        console.log (
+            Food.find({id: 555}, function (err, targetObj) {
+                if (err) return console.log(err);
+                // console.log(` ${targetObj[0].id}  + ${targetObj[0].product.name} + ${targetObj[0].product.calories}`);
+                return {
+                    id: targetObj[0].id,
+                    name: targetObj[0].product.name,
+                    calories: targetObj[0].product.calories
+
+                };
+            })
+        )
+
+
+
+    }
+    response.end(responseString);
+});
+server.listen(port, ip);
+console.log(`Server running at ${ip}:${port}`);
+
+
+
+
+// Food.create({id:555, product: {name: "ffffff", calories: 444}}, function (err) {
+//             if (err) return console.log(err);
+//         });
+
+// Food.find({id: 555}, function (err, targetObj) {
+//                         if (err) return console.log(err);
+//                         console.log(targetObj);
+//                     });

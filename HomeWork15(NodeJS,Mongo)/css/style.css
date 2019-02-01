@@ -1,0 +1,96 @@
+
+#navigation  {
+    width:100%;
+    height: 49px;
+    background-color: mediumblue;
+    position:sticky;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#navigation li {
+    margin: 0 50px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+
+}
+
+#navigation a {
+    text-decoration: none;
+    color:black;
+    font-size: 24px;
+    font-weight: 800;
+    padding:9px;
+    background-color:yellow;
+    border:1px solid black;
+
+}
+
+section.wrapper {
+    display:flex;
+    justify-content: center;
+    margin:10px;
+}
+#day_menu  {
+    background-color: #d7d78c;
+    border: 2px solid black;
+    border-radius:5px;
+    margin:5px;
+    width: 400px;
+    padding:10px;
+
+}
+
+#day_menu li {
+    font-family: cursive ;
+    font-weight:800;
+    margin:2px;
+    cursor:pointer;
+
+}
+
+#calories-wrap {
+    border:1px solid black;
+    border-radius:10px;
+    margin:5px;
+    padding:2px;
+    width:150px;
+}
+
+#food_list {
+    background-color: #d7d78c;
+    border: 2px solid black;
+    border-radius:5px;
+    margin:5px;
+    width: 400px;
+    padding:10px;
+}
+
+#food_list li {
+    font-family: cursive ;
+    font-weight:800;
+    margin:2px;
+    cursor:pointer;
+}
+
+
+h1 {
+    text-align:center;
+    margin:10px;
+    font-weight:800;
+    text-decoration: underline;
+    font-size:60px;
+}
+
+#content {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+form {
+    border:1px solid black;
+    padding:5px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang = ru>
+
+<head>
+    <title>Calories calculator</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+<div id = wrapper>
+    <section>
+        <ul id = navigation>
+            <li>
+                <a href = add_food.html>Добавить продукты</a>
+            </li>
+            <li>
+                <a href = food_list.html>Список Продуктов</a>
+            </li>
+            <li>
+                <a href = day_portion.html>Дневной рацион</a>
+            </li>
+        </ul>
+    </section>
+    <section id = content_wrapper>
+        <div id = content>
+            <h1>Добавьте продукты в базу</h1>
+            <form>
+            <input id = "add_product_name_field" type = "text" placeholder = "Название">
+                <input id = "add_product_calories_field" type = "text" placeholder = "Каллорий">
+                <input id = "add_product_button" type = "submit" value = "Добавить" >
+            </form>
+        </div>
+    </section>
+</div>
+</body>
+
+<script src = "../js/add_food.js"></script>
+</html>
+
