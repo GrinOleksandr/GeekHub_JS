@@ -51,13 +51,22 @@ section.wrapper {
 
 }
 
-#calories-wrap {
+#calories_count_span {
     border:1px solid black;
-    border-radius:10px;
+    border-radius:5px;
     margin:5px;
-    padding:2px;
+    padding:5px;
     width:150px;
 }
+
+#wrapper2 {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 2px;
+}
+
 
 #food_list {
     background-color: #d7d78c;
@@ -93,4 +102,8 @@ h1 {
 form {
     border:1px solid black;
     padding:5px;
+}
+
+h2 {
+    text-align:center;
 }
