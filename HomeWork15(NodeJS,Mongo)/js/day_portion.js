@@ -1,7 +1,7 @@
 const foodListUl = document.getElementById("food_list");
 const dayMenuUl = document.getElementById("day_menu");
 let menuCaloriesCounter = 0;
-let caloriesSpan = document.getElementById("calories_counter");
+const caloriesSpan = document.getElementById("calories_counter");
 
 document.addEventListener('DOMContentLoaded', renderList);
 
@@ -48,24 +48,28 @@ function addMeToMenu(ev){
     addToMenu(this);
 }
 
-function addToMenu(target){
-    let newItem = document.createElement("li");
-    newItem.dataset.calories = target.dataset.calories;
-    newItem.addEventListener('click', removeMeFromMenu);
+function addToMenu(target) {
+    if (checkCaloriesLimit()) {
+        menuCaloriesCounter += +target.dataset.calories;
 
-    let itemName = document.createElement("span");
-    itemName.innerText = target.querySelector("span").innerText;
+        let newItem = document.createElement("li");
+        newItem.dataset.calories = target.dataset.calories;
+        newItem.addEventListener('click', removeMeFromMenu);
 
-    let itemCalories = document.createElement("span");
-    itemCalories.innerText = `(${target.dataset.calories} Ккал.)`;
-    itemCalories.style.color = "blue";
-    itemCalories.style.fontWeight = "400";
+        let itemName = document.createElement("span");
+        itemName.innerText = target.querySelector("span").innerText;
 
-    newItem.appendChild(itemName);
-    newItem.appendChild(itemCalories);
-    dayMenuUl.appendChild(newItem);
-    menuCaloriesCounter += +target.dataset.calories;
-    checkCaloriesLimit();
+        let itemCalories = document.createElement("span");
+        itemCalories.innerText = `(${target.dataset.calories} Ккал.)`;
+        itemCalories.style.color = "blue";
+        itemCalories.style.fontWeight = "400";
+
+        newItem.appendChild(itemName);
+        newItem.appendChild(itemCalories);
+        dayMenuUl.appendChild(newItem);
+
+        checkCaloriesLimit();
+    }
 }
 
 function removeMeFromMenu(ev){
@@ -79,9 +83,12 @@ function checkCaloriesLimit(){
     let caloriesLimit = document.getElementById("calories_limit").value;
     caloriesSpan.innerText = menuCaloriesCounter;
     if(!caloriesLimit){
-        alert("Установите лимит каллорий")
+        alert("Установите лимит каллорий");
+        return false;
     }
-    if(menuCaloriesCounter > caloriesLimit){
-        alert("ВНИМАНИЕ!Лимит каллорий превышен")
+    else if(menuCaloriesCounter > caloriesLimit){
+        alert("ВНИМАНИЕ!Лимит каллорий превышен");
+        return false;
     }
+    return true;
 }
