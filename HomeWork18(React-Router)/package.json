@@ -12,7 +12,11 @@
   },
   "author": "Oleksandr Grin",
   "license": "ISC",
-   "dependencies": {
+  "bugs": {
+    "url": "https://github.com/Dubiy/react-weather-demo/issues"
+  },
+  "homepage": "https://github.com/Dubiy/react-weather-demo#readme",
+  "dependencies": {
     "express": "^4.16.4"
   }
 }
