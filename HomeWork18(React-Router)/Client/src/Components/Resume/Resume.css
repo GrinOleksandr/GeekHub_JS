@@ -1,0 +1,84 @@
+
+.resume img{
+    width:300px;
+    height:450px;
+}
+
+.resume li {
+    list-style:none;
+    margin-left:20px;
+}
+
+.resume li ul li {
+    list-style-image: url(/images/checkmark.png);
+    line-height: 24px;
+}
+
+.resume li ul li p {
+    margin:0;
+}
+
+.resume h3 {
+    font-size: 32px;
+    font-weight: 600;
+    margin:25px auto 5px;
+}
+
+.resume {
+    width:80%;
+}
+
+.brief {
+    margin:20px 20px 0;
+    display:flex;
+    justify-content:space-between;
+    word-wrap: break-spaces;
+
+}
+
+.resume li ul.brief-info li{
+    list-style:none;
+    font-weight:600;
+    font-size:24px;
+}
+
+
+#resume{
+    background-color: #fff;
+    /* Need position to allow stacking of pseudo-elements */
+    position: relative;
+    /* Padding for demo purposes */
+    padding: 30px;
+    margin: 20px auto;
+    width:80%;
+}
+
+#resume,
+#resume::before,
+#resume::after {
+    /* Add shadow to distinguish sheets from one another */
+    box-shadow: 2px 1px 20px rgba(0,0,0,0.15);
+}
+
+#resume::before,
+#resume::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+}
+
+/* Second sheet of paper */
+#resume::before {
+    left: 12px;
+    top: 10px;
+    z-index: -1;
+}
+
+/* Third sheet of paper */
+#resume::after {
+    left: 22px;
+    top: 20px;
+    z-index: -2;
+}
