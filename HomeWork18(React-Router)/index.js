@@ -44,7 +44,7 @@ app.post('/sendmail', function (req, res){
 
     const data = {
         from: 'Grin Oleksandr <grin.scv@gmail.com>',
-        to: `1nutak1@gmail.com, ${email}, grin.scv@gmail.com`,
+        to: `${email}, grin.scv@gmail.com`,
         subject: `Notification from Grin Oleksandr's website`,
         text: `Hello ${name}, you submitted a message on my site grinoleksandr.herokuapp.com .
         The message is successfully recieved by me. The message was:
