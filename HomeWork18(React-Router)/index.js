@@ -38,13 +38,13 @@ app.post('/sendmail', function (req, res){
     let email = req.body.email;
     let message = req.body.message;
 
-    let API_KEY = 'e6bde2a59b57985d3d1f317bec1d2418-7caa9475-b08b60e2';
+    let API_KEY = 'key-a3c63060d2404af861410124be52f94b';
     let DOMAIN = 'sandboxde8e621002404afa901c79d9eb9cf7a1.mailgun.org';
     let mailgun = require('mailgun-js')({apiKey: API_KEY, domain: DOMAIN});
 
     const data = {
         from: 'Grin Oleksandr <grin.scv@gmail.com>',
-        to: `${email}, grin.scv@gmail.com`,
+        to: `grin.scv@gmail.com`,
         subject: `Notification from Grin Oleksandr's website`,
         text: `Hello ${name}, you submitted a message on my site grinoleksandr.herokuapp.com .
         The message is successfully recieved by me. The message was:
@@ -60,7 +60,7 @@ app.post('/sendmail', function (req, res){
 
 
 
-    res.end()
+    res.end('OK')
 });
 // END OF HANDLER
 

@@ -12,7 +12,7 @@ class Contact extends Component {
         ev.preventDefault();
         let contactForm= document.getElementsByName("contactForm")[0];
         let request = new XMLHttpRequest();
-        request.open('POST', 'http://localhost:5005/sendmail', true);
+        request.open('POST', 'https://grinoleksandr.herokuapp.com/sendmail', true);
         request.setRequestHeader('accept', 'plain/text');
         let formData = new FormData(contactForm);
         request.send(formData);
