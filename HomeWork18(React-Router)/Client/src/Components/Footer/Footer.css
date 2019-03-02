@@ -2,9 +2,8 @@ body{ min-height:100%; padding:0; margin:0; position:relative; }
 
 body::after{ content:''; display:block; height:3vh; }
 
-
 #footer {
-    background-color: #cadcf1;
+    background-color: #88b5e9;
     position:absolute;
     bottom:0;
     width:100%;

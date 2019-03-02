@@ -7,7 +7,7 @@ class Footer extends Component {
             <div id="footer" className="container">
                 Copyright Grin Oleksandr 2019.
             </div>
-    )
+        )
     }
 }
 

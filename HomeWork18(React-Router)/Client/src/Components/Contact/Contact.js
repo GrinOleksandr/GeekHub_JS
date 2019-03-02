@@ -7,15 +7,15 @@ class Contact extends Component {
         this.sendEmail = this.sendEmail.bind(this);
     }
 
-
     sendEmail(ev) {
         ev.preventDefault();
         let contactForm= document.getElementsByName("contactForm")[0];
         let request = new XMLHttpRequest();
-        request.open('POST', 'https://grinoleksandr.herokuapp.com/sendmail', true);
-        request.setRequestHeader('accept', 'plain/text');
+        request.open('POST', `http://${window.location.hostname}:3000/sendmail`);
         let formData = new FormData(contactForm);
         request.send(formData);
+        contactForm.reset();
+        alert("Your message has been sent!")
     }
     render() {
         return (
@@ -27,12 +27,10 @@ class Contact extends Component {
                         <p>Enter your email: </p>
                         <input type="text" name = "email" placeholder="email"/>
                         <p>Enter your message: </p>
-                        <textarea name = "message" placeholder="Your message"  cols="120" rows="15"/>
+                        <textarea name = "message" placeholder="Your message"  cols="70" rows="10"/>
                         <button id = "sendMessage" type="submit">Send</button>
                     </form>
                 </div>
-
-
         )
     }
 }

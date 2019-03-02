@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-
 import './Resume.css';
 
 class Resume extends Component {
     render() {
         return (
-
-            <div id="resume" >
+            <div id="resume">
                 <ul className="resume">
                     <li className="brief">
                         <div>
@@ -27,7 +25,7 @@ class Resume extends Component {
                                 </li>
                             </ul>
                         </div>
-                        <img src="/images/sashagrin.jpg" alt = "Oleksandr Grin" />
+                        <img src="/images/sashagrin.jpg" alt="Oleksandr Grin"/>
                     </li>
 
                     <li className="education">
@@ -60,27 +58,27 @@ class Resume extends Component {
                         <h3>Work Experience</h3>
                         <ul>
                             <li>
-                                <p><b>Accountant</b> - <a href="http://noviobrii.org.ua">"Novi Obrii"</a> (2015-2017)
+                                <p><b>Accountant</b> - <a href="http://noviobrii.org.ua">Novi Obrii</a> (2015-2017)
                                 </p>
                             </li>
                             <li>
                                 <p><b>Furniture upholstery</b> - <a
-                                    href="http://www.matrix-mebli.com">"Matrix"</a> (2014-2015)</p>
+                                    href="http://www.matrix-mebli.com">Matrix</a> (2014-2015)</p>
                             </li>
                             <li>
-                                <p><b>Worker</b> - <a href="http://www.temp.com.ua">"Temp"</a> (2013)</p>
+                                <p><b>Worker</b> - <a href="http://www.temp.com.ua">Temp</a> (2013)</p>
                             </li>
                             <li>
                                 <p><b>Taxi driver</b> - <a
-                                    href="http://www.taxi1588.com.ua/">"VIP-Taxi"</a> (2011-2012)</p>
+                                    href="http://www.taxi1588.com.ua/">VIP-Taxi</a> (2011-2012)</p>
                             </li>
                             <li>
                                 <p><b>System administrator</b> - <a
-                                    href="http://www.intec.in.ua">"Intec-inform"</a> (2010)</p>
+                                    href="http://www.intec.in.ua">Intec-inform</a> (2010)</p>
                             </li>
                             <li>
-                                <p><b>Physical LAN building</b> - <a href="http://www.mclaut.com">"McLaut
-                                    ISP"</a> (2004-2006)</p>
+                                <p><b>Physical LAN building</b> - <a href="http://www.mclaut.com">McLaut
+                                    ISP</a> (2004-2006)</p>
                                 <p>(network troubles diagnostics, routers configurating)</p>
                             </li>
                         </ul>
@@ -140,7 +138,7 @@ class Resume extends Component {
                     </li>
                 </ul>
             </div>
-           )
+        )
     }
 }
 

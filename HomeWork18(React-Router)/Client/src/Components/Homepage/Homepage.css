@@ -19,9 +19,7 @@
     font-family: 'Lobster', cursive;
     font-size: 66px; font-weight: normal;
     line-height: 88px;
-
     text-shadow: 1px 0 0 #fff;
-
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .15em solid orange; /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */

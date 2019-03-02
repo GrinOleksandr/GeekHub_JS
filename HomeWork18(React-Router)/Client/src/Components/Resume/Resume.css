@@ -1,7 +1,9 @@
 
 .resume img{
-    width:300px;
+    width:312px;
     height:450px;
+    border:1px solid black;
+    margin:10px;
 }
 
 .resume li {
@@ -41,7 +43,6 @@
     font-weight:600;
     font-size:24px;
 }
-
 
 #resume{
     background-color: #fff;

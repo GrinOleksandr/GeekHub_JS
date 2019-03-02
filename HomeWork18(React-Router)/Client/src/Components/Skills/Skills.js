@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-
 import './Skills.css';
 
 class Skills extends Component {
     render() {
         return (
-
             <div id="content">
                 <div id="wrapper">
                     <h3>Hello. I'm a JavaScript developer. Have experience of writing dynamic websites.</h3>
@@ -22,8 +20,6 @@ class Skills extends Component {
                     </ul>
                 </div>
             </div>
-
-
         )
     }
 }

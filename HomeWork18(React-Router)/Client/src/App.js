@@ -9,8 +9,6 @@ import About from './Components/About/About.js'
 import Resume from './Components/Resume/Resume.js'
 import Contact from './Components/Contact/Contact.js'
 
-
-
 class App extends Component {
     render() {
         return (

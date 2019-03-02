@@ -3,67 +3,50 @@ const path = require('path');
 const app = express();
 const http = require('http').Server(app);
 const port = process.env.PORT || 5005;
-const  bodyParser = require('body-parser');
+const formidableMiddleware = require('express-formidable');
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-// Put all API endpoints under '/api'
-// app.get('/api/data', (req, res) => {
-//     res.json({users: [
-//             {username: 'John', id: 251},
-//             {username: 'Jane', id: 904}
-//         ]});
-//     console.log(`request /api/data`);
-// });
-
-// The "catchall" handler: for any request that doesn't
-// match one above, send back React's index.html file.
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
-
 // CONTACT FORM HANDLER!!
-app.use(bodyParser.urlencoded({
-    extended:true
-}));
 
-app.use(bodyParser.json());
+app.use(formidableMiddleware());
 app.post('/sendmail', function (req, res){
-    console.log(req.body.name);
-    console.log(req.body);
-    console.log(req.body);
-    let name = req.body.name;
-    let email = req.body.email;
-    let message = req.body.message;
+        console.log(req.fields); // contains non-file fields
+        console.log(req.files); // contains files
 
-    let API_KEY = 'key-a3c63060d2404af861410124be52f94b';
-    let DOMAIN = 'sandboxde8e621002404afa901c79d9eb9cf7a1.mailgun.org';
+    let name = req.fields.name;
+    let email = req.fields.email;
+    let message = req.fields.message;
+
+    let API_KEY = '06789e3ec54ff822027f358bb2ef04b0-7caa9475-11be9a4a';
+    let DOMAIN = 'sandbox02c1799ed97f49c48a63f46647ad1e8e.mailgun.org';
     let mailgun = require('mailgun-js')({apiKey: API_KEY, domain: DOMAIN});
 
     const data = {
         from: 'Grin Oleksandr <grin.scv@gmail.com>',
-        to: `grin.scv@gmail.com`,
-        subject: `Notification from Grin Oleksandr's website`,
-        text: `Hello ${name}, you submitted a message on my site grinoleksandr.herokuapp.com .
-        The message is successfully recieved by me. The message was:
+        to: `${email}, grin.scv@gmail.com`,
+        subject: `Grin Oleksandr's website`,
+        text: `Hello ${name}, you have submitted a message on my website.
+        The message was:
         ----------------------------------------------------------------
         ${message}
         ----------------------------------------------------------------
+        I'll read it ASAP.       
         Good Bye!`
     };
 
     mailgun.messages().send(data, (error, body) => {
         console.log(body);
     });
-
-
-
-    res.end('OK')
+    res.end()
 });
 // END OF HANDLER
 
 http.listen(port, function () {
-    console.log(`Server running at localhost:${port}`);
+    console.log(`***Server running at localhost:${port}`);
 });
