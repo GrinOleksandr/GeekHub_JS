@@ -23,15 +23,16 @@ app.post('/sendmail', function (req, res){
     let email = req.fields.email;
     let message = req.fields.message;
 
-    let API_KEY = 'ENTER API KEY HERE';
-    let DOMAIN = 'ENTER DOMAIN HERE';
+    let API_KEY = 'ENTER YOUR API KEY!!';    ////DON'T PUSH THIS DATA TO GIT!!!
+    let DOMAIN = 'ENTER YOUR DOMAIN!!!!!!!'; ////DON'T PUSH THIS DATA TO GIT!!!
     let mailgun = require('mailgun-js')({apiKey: API_KEY, domain: DOMAIN});
 
     const data = {
         from: 'Grin Oleksandr <grin.scv@gmail.com>',
-        to: `${email}, grin.scv@gmail.com`,
+        to: `${email}`,
+        cc: `1nutak1@gmail.com`,
         subject: `Grin Oleksandr's website`,
-        text: `Hello ${name}, you have submitted a message on my website.
+        text: `Hello ${name} (from ${email}) you have submitted a message on my website.
         The message was:
         ----------------------------------------------------------------
         ${message}
