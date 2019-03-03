@@ -1,0 +1,65 @@
+#sendMessage {
+    display: block;
+}
+
+#contact h3 {
+    font-size:24px;
+    font-weight:600;
+}
+
+#contact p {
+    margin:10px 0 1px 0;
+}
+/*PAPER STYLE*/
+
+#contact {
+    margin:100px 40px 0;
+}
+#contact {
+    background-color: #fff;
+    width:80%;
+    /* Need position to allow stacking of pseudo-elements */
+    position: relative;
+    /* Padding for demo purposes */
+    padding: 30px;
+    margin: 20px auto;
+    font-size:16px;
+}
+
+#contact ,
+#contact ::before,
+#contact ::after {
+    /* Add shadow to distinguish sheets from one another */
+    box-shadow: 2px 1px 20px rgba(0,0,0,0.15);
+
+}
+
+#contact ::before,
+#contact ::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+}
+
+/* Second sheet of paper */
+#contact ::before {
+    left: 12px;
+    top: 10px;
+    z-index: -1;
+}
+
+/* Third sheet of paper */
+#contact ::after {
+    left: 22px;
+    top: 20px;
+    z-index: -2;
+}
+
+
+
+
+
+
+

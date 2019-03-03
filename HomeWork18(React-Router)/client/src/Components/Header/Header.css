@@ -1,0 +1,40 @@
+#header{
+    height: 11vh;
+}
+#header .container {
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 9px 93px 0;
+}
+
+#header #logo a {
+    display: block;
+    text-decoration: none;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+#header .container ul li {
+    list-style:none;
+    float:left;
+}
+
+#header .container ul li.active a {
+    background: #e95d3c;
+    border-radius: 5px;
+    color: #FFF;
+}
+
+#header .container ul li a {
+    display: block;
+    margin-bottom:13px;
+    margin-left: 0.7em;
+    padding: 0.80em 1.2em;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    outline: 0;
+    color: #333;
+}
