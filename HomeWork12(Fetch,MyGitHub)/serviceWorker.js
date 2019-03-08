@@ -24,18 +24,17 @@ self.addEventListener('activate', event => {
     event.waitUntil(self.clients.claim());
 });
 
-self.addEventListener('fetch', event => {
+
+
+
+self.addEventListener('fetch', function(event){
     event.respondWith(
-        caches.open(cacheName)
-            .then(cache => cache.match(event.request, {ignoreSearch: true}))
-            .then(response => {
-                return response || fetch(event.request);
+        fetch(e.request)
+            .then((response) => {
+                return caches.open(currentCacheName).then((cache) => {
+                    cache.put(e.request.url,response.clone());
+                    response.clone();
+                })
             })
-    );
-});
-
-
-//log
-self.addEventListener('fetch', function(event) {
-    console.log(event.request.url);
-});
+    )
+})
