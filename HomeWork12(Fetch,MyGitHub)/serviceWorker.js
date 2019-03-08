@@ -35,36 +35,17 @@ self.addEventListener('install', function(e) {
 
 
 
-self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        caches.match(event.request)
-            .then(function(response) {
-                // ресурс есть в кеше
-                if (response) {
+self.addEventListener('fetch', function(e) {
+    e.respondWith(
+        caches.match(e.request).then(function(r) {
+            console.log('[Service Worker] Fetching resource: '+e.request.url);
+            return r || fetch(e.request).then(function(response) {
+                return caches.open(cacheName).then(function(cache) {
+                    console.log('[Service Worker] Caching new resource: '+e.request.url);
+                    cache.put(e.request, response.clone());
                     return response;
-                }
-
-                /* Важно: клонируем запрос. Запрос - это поток, может быть обработан только раз. Если мы хотим использовать объект request несколько раз, его нужно клонировать */
-                var fetchRequest = event.request.clone();
-
-                return fetch(fetchRequest).then(
-                    function(response) {
-                        // проверяем, что получен корректный ответ
-                        if(!response || response.status !== 200 || response.type !== 'basic') {
-                            return response;
-                        }
-
-                        /* ВАЖНО: Клонируем ответ. Объект response также является потоком. */
-                        var responseToCache = response.clone();
-
-                        caches.open(CACHE_NAME)
-                            .then(function(cache) {
-                                cache.put(event.request, responseToCache);
-                            });
-
-                        return response;
-                    }
-                );
-            })
+                });
+            });
+        })
     );
 });
