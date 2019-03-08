@@ -9,7 +9,7 @@ let filesToCache = [
 ];
 
 self.addEventListener('install', function(event) {
-    event.waitUntill(
+    event.waitUntil(
         caches.open(currentCacheName)
             .then(function (cache) {
                 return cache.addAll(filesToCache)
