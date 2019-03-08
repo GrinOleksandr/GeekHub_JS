@@ -5,13 +5,6 @@ if ('serviceWorker' in navigator) {
          })
 }
 
-
-
-
-
-
-
-
 let myReposList = document.getElementById("myReposList");
 myReposList.innerHTML = '<img src = "img/AjaxLoader.gif" class = "loader1" >';
 

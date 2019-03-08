@@ -9,7 +9,6 @@ let filesToCache = [
     '/css/reset.css'
 ];
 
-
 self.addEventListener('install', function(e) {
     console.log('[Service Worker] Install');
     e.waitUntil(
@@ -22,17 +21,6 @@ self.addEventListener('install', function(e) {
             })
     );
 });
-
-
-
-
-
-
-
-
-
-
-
 
 
 self.addEventListener('fetch', function(e) {
