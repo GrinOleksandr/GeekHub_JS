@@ -16,31 +16,31 @@ self.addEventListener('install', function(e) {
             console.log('[Service Worker] Caching all: app shell and content');
             return cache.addAll(filesToCache);
         })
+            .catch(function(err){
+                console.log(err)
+            })
     );
 });
 
 
-self.addEventListener('activate', function(e) {
-    console.log('[Service Worker] ACTIVATE');
-    e.waitUntil(
-        caches.open(currentCacheName).then(function(cache) {
-            console.log('[Service Worker] Caching all: app shell and content');
-            return cache.addAll(filesToCache);
+
+
+
+
+
+
+
+
+
+
+
+
+self.addEventListener('fetch', function(event) {
+    console.log(event.request.url);
+
+    event.respondWith(
+        caches.match(event.request).then(function(response) {
+            return response || fetch(event.request);
         })
     );
 });
-
-
-
-
-
-
-
-
-
-
-
-self.addEventListener('fetch', function(e) {
-    console.log('[Service Worker] Fetched resource '+e.request.url);
-});
-
