@@ -33,3 +33,9 @@ self.addEventListener('fetch', event => {
             })
     );
 });
+
+
+//log
+self.addEventListener('fetch', function(event) {
+    console.log(event.request.url);
+});
