@@ -8,3 +8,11 @@ let filesToCache = [
     '/css/reset.css'
 ];
 
+self.addEventListener('install', function(event) {
+    event.waitUntill(
+        caches.open(currentCacheName)
+            .then(function (cache) {
+                return cache.addAll(filesToCache)
+            })
+    );
+});
