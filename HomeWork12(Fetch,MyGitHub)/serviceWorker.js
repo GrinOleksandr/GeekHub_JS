@@ -16,3 +16,18 @@ self.addEventListener('install', function(event) {
             })
     );
 });
+
+self.addEventListener('activate', function(event) {
+    event.waitUntill(
+        cached.keys()
+            .then(function (cachedNames) {
+                return Promise.all(
+                    cachedNames.filter(function (cacheName) {
+                        return cacheName != currentCacheName;
+                    }).map(function (cacheName) {
+                        return caches.delete(cacheName);
+                    })
+                )
+            })
+    )
+});
