@@ -11,7 +11,7 @@ class Contact extends Component {
         ev.preventDefault();
         let contactForm= document.getElementsByName("contactForm")[0];
         let request = new XMLHttpRequest();
-        request.open('POST', `http://${window.location.hostname}:3000/sendmail`);
+        request.open('POST', `${window.location.origin}/sendmail`);
         let formData = new FormData(contactForm);
         request.send(formData);
         contactForm.reset();

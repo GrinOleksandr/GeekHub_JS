@@ -19,6 +19,7 @@
   "dependencies": {
     "express": "^4.16.4",
     "express-formidable": "^1.2.0",
+    "heroku-logger": "^0.3.3",
     "mailgun-js": "^0.22.0"
   }
 }

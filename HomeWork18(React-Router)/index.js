@@ -1,8 +1,11 @@
+const logger = require('heroku-logger');
+
 const express = require('express');
 const path = require('path');
 const app = express();
 const http = require('http').Server(app);
-const port = process.env.PORT || 5005;
+const port =  process.env.PORT ||5005;
+
 const formidableMiddleware = require('express-formidable');
 
 // Serve static files from the React app
@@ -16,21 +19,22 @@ app.get('*', (req, res) => {
 
 app.use(formidableMiddleware());
 app.post('/sendmail', function (req, res){
-        console.log(req.fields); // contains non-file fields
-        console.log(req.files); // contains files
+    console.log(req.fields); // contains non-file fields
+    console.log(req.files); // contains files
 
     let name = req.fields.name;
     let email = req.fields.email;
+    let copyEmail = '1nutak1@gmail.com';
     let message = req.fields.message;
 
-    let API_KEY = 'ENTER YOUR KEY';
-    let DOMAIN = 'ENTER YOUR DOMAIN';
+    let API_KEY = 'ENTER YOUR API KEY!';
+    let DOMAIN = 'scv.pp.ua';
     let mailgun = require('mailgun-js')({apiKey: API_KEY, domain: DOMAIN});
 
     const data = {
         from: 'Grin Oleksandr <grin.scv@gmail.com>',
         to: email,
-        cc: `1nutak1@gmail.com`,
+        cc: copyEmail,
         subject: `Grin Oleksandr's website`,
         text: `Hello ${name} (from ${email}) you have submitted a message on my website.
         The message was:
@@ -43,9 +47,10 @@ app.post('/sendmail', function (req, res){
 
     mailgun.messages().send(data, (error, body) => {
         console.log(body);
-
     });
-    res.end()
+    res.end();
+
+
 });
 // END OF HANDLER
 

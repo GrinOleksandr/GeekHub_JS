@@ -14,7 +14,7 @@ class Header extends Component {
             let prevActiveButton = document.getElementsByClassName('active')[0];
             prevActiveButton.classList.remove('active');
             element.classList.add('active');
-            console.log(element);
+
         }
 
     //     document.addEventListener('DOMContentLoaded', function () {
