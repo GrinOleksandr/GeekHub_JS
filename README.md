@@ -147,4 +147,4 @@ Screw ServiceWorkers to your portfolio on gitpages (caching, offline viewing).
 Code: "https://github.com/GrinOleksandr/GeekHub_JS/tree/master/HomeWork12(Fetch%2CMyGitHub)"
 Preview: "https://grinoleksandr.github.io/GeekHub_JS/HomeWork12(Fetch,MyGitHub)"
 
-# Grin Oleksandr 2019.
+### Grin Oleksandr 2019.
